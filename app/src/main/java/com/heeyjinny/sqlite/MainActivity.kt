@@ -26,37 +26,45 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //3
-        //어댑터를 생성하고 어댑터에있는 목록(listData)에서 가져온 데이터 세팅(데이터조회메서드 select)
+        //어댑터 생성
         val adapter = RecyclerAdapter()
-        adapter.listData.addAll(helper.selectMemo())
+
+        //8
+        //데이터 삭제를 위해 생성해둔 helper를 어댑터에 전달
+        //RecyclerAdapter.kt에 helper프로퍼티 생성...
+        adapter.helper = helper
 
         //4
+        //어댑터에있는 목록(listData)에서 가져온 데이터 세팅(데이터조회메서드 select)
+        adapter.listData.addAll(helper.selectMemo())
+
+        //5
         //리사이블러뷰 위젯에 어댑터를 연결하고 레이아웃 매니저 설정
         binding.recyclerMemo.adapter = adapter
         binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
 
-        //5
+        //6
         //리사이클러뷰 아이템 목록에 있는 저장버튼에 클릭이벤트 설정
         binding.buttonSave.setOnClickListener {
 
-            //5-1
+            //6-1
             //조건식을 사용하여 메모입력 위젯인 EditText에 값이 있으면 해당 내용으로 Memo클래스 생성
             if (binding.editText.text.toString().isNotEmpty()){
 
-                //5-2
+                //6-2
                 //입력한 텍스트 값이 있다면 Memo클래스를 생성해 파라미터로 값을 전달하고 변수에 저장
                 val memo = Memo(null, binding.editText.text.toString(), System.currentTimeMillis())
-                //5-3
+                //6-3
                 //helper클래스의 insertMemo()메서드에 변수memo의 값을 전달해 데이터베이스에 저장
                 helper.insertMemo(memo)
-                //5-4
+                //6-4
                 //저장이 끝났으면 어댑터의 데이터 모두 초기화
                 adapter.listData.clear()
-                //5-5
+                //6-5
                 //데이터베이스에서 새로운 목록을 읽어와 어댑터에 다시 세팅하고 갱신(새로고침 개념...)
                 //새로 생성되는 메모에는 번호가 자동 입력되므로 번호를 갱신하기 위해 새로운 데이터를 세팅함
                 adapter.listData.addAll(helper.selectMemo())
-                //5-6
+                //6-6
                 //어댑터의 세팅이 끝났다는 것(데이터가 변경되었다는 것) 알려주고 갱신
                 adapter.notifyDataSetChanged()
                 //5-6
@@ -64,8 +72,11 @@ class MainActivity : AppCompatActivity() {
                 binding.editText.setText("")
 
             }
+        }//클릭리스너...
 
-        }
+        //7
+        //메모 목록에 삭제버튼 추가하여 메모 삭제 기능 구현
+        //item_recycler.xml 수정...
 
     }//onCreate
 }//ManinActivity
