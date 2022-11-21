@@ -4,15 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+<!--  리사이클러뷰 생성하여 화면 구성하기  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMemo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+<!--  메모 입력 창, 버튼 생성  -->
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="65sp"
+        android:hint="메모를 입력하세요"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:text="저장"
+        android:backgroundTint="@color/teal_200"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText" />
+
+<!--  리사이클러뷰 아이템 용도로 사용할 레이아웃 파일 생성  -->
+<!--  app - res - layout 우클릭 - Layout Resource File  -->
+<!--  item_recycler.xml 생성  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

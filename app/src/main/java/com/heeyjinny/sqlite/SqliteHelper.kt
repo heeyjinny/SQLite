@@ -168,6 +168,11 @@ open class SqliteHelper(context: Context, name: String, version: Int): SQLiteOpe
 
     }//deleteMemo()
 
+    //9
+    //CRUD생성 완료, 이제 화면 만들어 MainActivity.kt에 연결하기
+    //화면 구성: 두개의 XML파일 수정(메인액티비티, 리사이클러뷰 추가한 파일)
+    //activity_main.xml 수정하기...
+
 }//SqliteHelper
 
 //4

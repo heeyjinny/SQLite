@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:padding="8dp">
+
+<!-- 데이터베이스에 저장할 번호, 내용, 시간 표시할 텍스트뷰 배치  -->
+    <TextView
+        android:id="@+id/textNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textContent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--  android:maxLines="2" : 텍스트뷰의 줄 제한 2줄  -->
+<!--  android:ellipsize="end" : 줄 제한이 넘어가면 말줄임표 속성(...) -->
+    <TextView
+        android:id="@+id/textContent"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:text="메모 내용 표시"
+        android:textSize="16sp"
+        android:padding="16sp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textNum"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2022/01/01 08:40"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textContent"/>
+
+<!--  배치 후 소스코드 연결하기  -->
+<!--  리사이클러뷰와 액티비티 연결을 위한 어댑터 클래스 만들기  -->
+<!--  app - java 밑 패키지 우클릭 - 클래스생성  -->
+<!--  RecyclerAdapter.kt 클래스 생성  -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
