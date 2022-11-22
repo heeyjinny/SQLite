@@ -19,7 +19,6 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
     //3
     var listData = mutableListOf<Memo>()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         //4
         val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -90,7 +89,6 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
     }//Holder
 
 }//RecyclerAdapter
-
 
 //7
 //MainActivity.kt 에서 모든 코드를 조합해 동작가능하게 작성
