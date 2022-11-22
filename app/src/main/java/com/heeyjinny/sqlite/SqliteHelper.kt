@@ -10,7 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper
 //SQLiteOpenHelper: 생성 시 파라미터로 Context, 데이터베이스명, 팩토리, 버전정보가 필요함
 //팩토리는 사용하지 않아도 되므로 나머지 세 가지 정보를 SqliteHelper클래스의 생성자에 파라미터로 정의 후
 //상속받은 SQLiteOpenHelpe에 전달(전달 시 생성자에는 없지만 팩토리는 null값으로 전달함)
-open class SqliteHelper(context: Context, name: String, version: Int): SQLiteOpenHelper(context, name, null, version) {
+open class SqliteHelper(context: Context, name: String, version: Int)
+    : SQLiteOpenHelper(context, name, null, version) {
 
     //2
     //SQLiteOpenHelper의 필수 메서드 Implement
@@ -50,6 +51,7 @@ open class SqliteHelper(context: Context, name: String, version: Int): SQLiteOpe
     //키, 값 형태로 사용되는 ContentValues클래스 사용: ContentValues.put("컬럼명","값")
     //num는 null값을 허용했고 자동으로 값이 증가되기 때문에 메서드에 작성할 필요 없음
     fun insertMemo(memo: Memo){
+
         val values = ContentValues()
         values.put("content", memo.content)
         values.put("datetime", memo.datetime)
@@ -61,6 +63,7 @@ open class SqliteHelper(context: Context, name: String, version: Int): SQLiteOpe
         val wd = writableDatabase
         wd.insert("memo", null, values)
         wd.close()
+
     }//insertMemo()
 
     //6
@@ -179,5 +182,5 @@ open class SqliteHelper(context: Context, name: String, version: Int): SQLiteOpe
 //데이터클래스(Memo)생성하여 정의
 //num와 datetime의 타입: 데이터베이스와 숫자의 범위가 서로 다르기 때문에 Long으로 타입을 변경하여 사용
 //항상 특별한 이유가 없으면 SQLite에서 INTEGER로 선언한 것은 소스코드에서 Long으로 사용함
-//num의 null(?)허용: primary key의 옵션으로 값이 자동 증가되기 때문에 데이터 삽입 시 필요하지 않아서 허용함
+//num의 null(?)허용: primary key의 옵션으로 값이 자동 증가되기 때문에 데이터 삽입 시 필요하지 않아서 허용
 data class Memo(var num: Long?, var content: String, var datetime: Long)
