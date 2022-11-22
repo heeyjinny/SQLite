@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat
 
 //리사이클러뷰 어댑터를 상속받는 어댑터클래스 생성
 //리사이클러뷰 목록만들기 과정과 동일함...
+//Holder클래스 inner클래스로 어댑터 클래스 안에서 생성하기만 바뀜...
 //2
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
 
