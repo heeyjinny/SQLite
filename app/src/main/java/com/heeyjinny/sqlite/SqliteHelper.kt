@@ -155,6 +155,13 @@ open class SqliteHelper(context: Context, name: String, version: Int)
         wd.update("memo", values, "num = ${memo.num}", null)
         wd.close()
 
+        //(+)위 수정메서드의 코드를 직접쿼리로 작성하기
+        val query = "update memo set content= '${memo.content}', datetime= '${memo.datetime}'" +
+                " where num= ${memo.num} "
+        val db = writableDatabase
+        db.execSQL(query)
+        db.close()
+
     }//updateMeno()
 
     //8 (직접쿼리 작성)
