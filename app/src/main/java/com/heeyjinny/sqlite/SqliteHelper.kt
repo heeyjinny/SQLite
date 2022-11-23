@@ -151,7 +151,7 @@ open class SqliteHelper(context: Context, name: String, version: Int)
 
     }//updateMeno()
 
-    //8
+    //8 (직접쿼리 작성)
     //데이터 삭제 메서드(DELETE) 정의
     //복잡한 데이터베이스를 다룰 때 쿼리를 직접 작성하면 데이터를 더 정밀하게 다룰 수 있음
     //삭제 메서드는 앞과 다르게 SqliteHelper클래스에 쿼리를 직접 입력해서 데이터를 삭제하는 코드로 작성
