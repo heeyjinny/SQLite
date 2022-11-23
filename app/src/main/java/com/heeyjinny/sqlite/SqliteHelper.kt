@@ -64,6 +64,12 @@ open class SqliteHelper(context: Context, name: String, version: Int)
         wd.insert("memo", null, values)
         wd.close()
 
+        //(+)위 삽입메서드의 코드를 직접쿼리로 작성하기
+        val query = "insert into memo(content, datetime) values('${memo.content}', '${memo.datetime})"
+        val db = writableDatabase
+        db.execSQL(query)
+        db.close()
+
     }//insertMemo()
 
     //6

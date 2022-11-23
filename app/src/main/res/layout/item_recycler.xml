@@ -20,7 +20,7 @@
 
 <!--  android:maxLines="2" : 텍스트뷰의 줄 제한 2줄  -->
 <!--  android:ellipsize="end" : 줄 제한이 넘어가면 말줄임표 속성(...) -->
-<!--  macLine, ellipsize 삭제하여 전체내용 보여주기  -->
+<!--  FIN. macLine, ellipsize 삭제하여 전체내용 보여주기  -->
     <TextView
         android:id="@+id/textContent"
         android:layout_width="0dp"
