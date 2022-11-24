@@ -18,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
 <!--  android:maxLines="2" : 텍스트뷰의 줄 제한 2줄  -->
 <!--  android:ellipsize="end" : 줄 제한이 넘어가면 말줄임표 속성(...) -->
 <!--  FIN. macLine, ellipsize 삭제하여 전체내용 보여주기  -->
@@ -47,6 +48,7 @@
 <!--  리사이클러뷰와 액티비티 연결을 위한 어댑터 클래스 만들기  -->
 <!--  app - java 밑 패키지 우클릭 - 클래스생성  -->
 <!--  RecyclerAdapter.kt 클래스 생성  -->
+
 
 <!--  삭제 버튼 생성  -->
     <Button
