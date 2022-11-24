@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+
 //1
 //SQLite 데이터베이스를 사용하기 위해서는 SQLiteOpenHelper클래스를 상속 받아야 함
 //SQLiteOpenHelper: 생성 시 파라미터로 Context, 데이터베이스명, 팩토리, 버전정보가 필요함

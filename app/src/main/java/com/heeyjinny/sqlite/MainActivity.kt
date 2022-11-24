@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                 binding.editText.setText("")
 
             }
+
         }//클릭리스너...
 
         //7
