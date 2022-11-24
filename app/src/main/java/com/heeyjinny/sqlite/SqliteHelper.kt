@@ -65,7 +65,7 @@ open class SqliteHelper(context: Context, name: String, version: Int)
         wd.insert("memo", null, values)
         wd.close()
 
-        //(+)위 삽입메서드의 코드를 직접쿼리로 작성하기
+        //(+)위 삽입메서드의 코드를 직접쿼리로 작성하기(insert into values)
         val query = "insert into memo(content, datetime) values('${memo.content}', '${memo.datetime})"
         val db = writableDatabase
         db.execSQL(query)
@@ -156,7 +156,7 @@ open class SqliteHelper(context: Context, name: String, version: Int)
         wd.update("memo", values, "num = ${memo.num}", null)
         wd.close()
 
-        //(+)위 수정메서드의 코드를 직접쿼리로 작성하기
+        //(+)위 수정메서드의 코드를 직접쿼리로 작성하기 (update set where)
         val query = "update memo set content= '${memo.content}', datetime= '${memo.datetime}'" +
                 " where num= ${memo.num} "
         val db = writableDatabase
